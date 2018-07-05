@@ -20,7 +20,8 @@ function register_my_menus() {
 add_action( 'init', 'register_my_menus' );
 
 function load_scripts(){
-    wp_enqueue_script( 'bootstrap-js', '/js/bootstrap.min.js', array( 'jquery '), '4.1.0', true);  
+    wp_enqueue_script( 'bootstrap-js', '/js/bootstrap.min.js', array( 'jquery '), '4.1.0', true);
+    // wp_enqueue_script( 'jquery-js', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array( 'jquery '), '3.3.1', true);   
     wp_enqueue_style( 'bootstrap-css', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', array(), '1.0', all );
     wp_enqueue_style( 'material-icon', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), '1.0', all );
     wp_enqueue_style( 'template', get_template_directory_uri() .'/style.css', array(), '4.1.0', all );
@@ -112,9 +113,7 @@ function my_theme_sidebars(){
         array(
             'name' => 'First Banner',
             'id' => 'banner-1',
-            'description' => 'Add a Banner',
-            'before_widget' => '<img class="img-fluid">',
-            'after_widget' => '</img>'
+            'description' => 'Add a Banner'
         )
     );
 

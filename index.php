@@ -12,18 +12,18 @@
                 </button>
                 
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto" id='mynav' >
                         <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="/"><span class='meulink' >Home</span></a>
+                        <a class="nav-link js-scroll-trigger" href="#home" data-toggle="collapse" data-target="#navbarResponsive"><span class='meulink' >Home</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#quem-somos"><span class='meulink' >Quem Somos</span></a>
+                        <a class="nav-link js-scroll-trigger" href="#quem-somos" data-toggle="collapse" data-target="#navbarResponsive"><span class='meulink' >Quem Somos</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?php echo(get_template_directory_uri()) ?>/blog"><span class='meulink' >Blog</span></a>
+                        <a class="nav-link js-scroll-trigger" href="#blog" data-toggle="collapse" data-target="#navbarResponsive" ><span class='meulink' >Blog</span></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?php echo(get_template_directory_uri()) ?>/Contato"><span class='meulink' >Contato</span></a>
+                        <a class="nav-link js-scroll-trigger" href="#contato" data-toggle="collapse" data-target="#navbarResponsive" ><span class='meulink' >Contato</span></a>
                         </li>
                     </ul>
                 </div>
@@ -39,7 +39,7 @@
                     <p class="block-text"><?php echo getContentHeaderByPostTitle($arrayOfConteudoLoop,'sub_header'); ?></p>
                     <p class="block-text"><?php echo getContentHeaderByPostTitle($arrayOfConteudoLoop,'sub_header_2'); ?></p>
                     <?php if(getContentHeaderByPostTitle($arrayOfConteudoLoop,'btn_simulacao')): ?>
-                    <a href="#" class="btn btn-primary"><?php echo getContentHeaderByPostTitle($arrayOfConteudoLoop,'btn_simulacao'); ?></a>
+                    <a href="#" class="btn btn-primary" id='btn-simulation' ><?php echo getContentHeaderByPostTitle($arrayOfConteudoLoop,'btn_simulacao'); ?></a>
                     <?php endif ?>
                 </div>
             </div>
@@ -118,8 +118,17 @@
             </div>
         </div>
     </article> -->
-
-    <article class='products' id='quem-somos'>
+    <section id='services' >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Cote Agora</h2>
+                    <h3 class="section-subheading text-muted">Proteja seu patrimônio e sua segurança financeira por menos de um café por dia!</h3>
+                </div>
+            </div>
+    </section>
+    </div>
+    <article class='products'>
         <div class="main-products">
             <div class="row">
                 <div class="product-1 col-md-4">
@@ -169,12 +178,8 @@
         </div>
     </article>
 
-    <div class="quadro" id='banner-1'>
-        <?php 
-        wp_reset_query();
-        echo(get_the_post_thumbnail_url($arrayOfSinglePageLoop[0]->ID));
-        ?>
-        <img class='banner-1' src="<?php echo(get_the_post_thumbnail_url($arrayOfSinglePageLoop[0]->ID)); ?>" alt="">
+    <div class="headline">
+        <h2 class='title' >A Importancia de Estar Segurado!</h2>
     </div>
 
     <section>
@@ -233,15 +238,26 @@
         </div>
     </section>
     <script src="<?php echo(get_template_directory_uri())?>/js/adjustCardServices.js" ></script>
-    <div class="quadro">
-        <div class="jumbotron">
-            <h1 class="display-4">JumboTron 2</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <section class="quadro" id='quem-somos' style='background-color:#8fc8bf;' >
+        <div class="global-container">
+            <div class="row" style='width:100%;'>
+                <div class="col second-element" >
+                    <div class="container" style='margin-top: 2em;'>
+                        <h1 class="display-4">Fluid jumbotron</h1>
+                        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 first-element">
+                    <div class="text-center">
+                        <img class='img-fluid' src="<?php echo(get_template_directory_uri())?>/images/city.jpg" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    
+</div>
 
     <div class="modulo">
         <div class="title" style='margin-top:3em;margin-bottom:2em;' >
@@ -286,89 +302,94 @@
         </div>
     </div>
 
-    <section class="blog-container">
+    <section class="blog-container" id='blog'>
         <div class="blog-container-title title" style='margin-top:3em;margin-bottom:3em;' ><h2>Confira nossas Postagens</h2></div>
-        <div class="card-group">
-                <div class="row">
-                    <div class="col-sm-4">
-                    <div class="text-center">
-                        <img class="card-img-top my-img" src="<?php echo(get_template_directory_uri()) ?>/images/blog1.jpg" alt="Card image cap">
-                    </div>
-                        <div class="card-body">
-                        <h5 class="card-title title">Blog title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <a href="">Ler no Blog</a>
+        <div class="container">
+
+            <div class="card-group">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <img class="card-img-top my-img" src="<?php echo(get_template_directory_uri()) ?>/images/blog1.jpg" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title title">Blog title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="">Ler no Blog</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                    <div class="text-center">
-                        <img class="card-img-top my-img" src="<?php echo(get_template_directory_uri()) ?>/images/blog1.jpg" alt="Card image cap">
-                    </div>
-                        <div class="card-body">
-                        <h5 class="card-title title">Blog title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <a href="">Ler no Blog</a>
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <img class="card-img-top my-img" src="<?php echo(get_template_directory_uri()) ?>/images/blog1.jpg" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title title">Blog title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="">Ler no Blog</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-4">
-                    <div class="text-center">
-                        <img class="card-img-top my-img" src="<?php echo(get_template_directory_uri()) ?>/images/blog1.jpg" alt="Card image cap">
-                    </div>
-                        <div class="card-body">
-                        <h5 class="card-title title">Blog title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                        <a href="">Ler no Blog</a>
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <img class="card-img-top my-img" src="<?php echo(get_template_directory_uri()) ?>/images/blog1.jpg" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title title">Blog title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                                <a href="">Ler no Blog</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
     </section>
 
     <div class="about-comments title" style='margin-top:3em;margin-bottom:3em;'>
         <h2>O que falam de nós</h2>
     </div>
+    <div class="container">
 
-    <div class="card-deck">
-        <div class="card border-0">
-            <div class="card border-0 mb-3 mx-auto" style="max-width: 18rem;">
-                <div class="speech-bubble">
-                    
-                    <blockquote><p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p></blockquote>
+        <div class="card-deck">
+            <div class="card border-0">
+                <div class="card border-0 mb-3 mx-auto" style="max-width: 18rem;">
+                    <div class="speech-bubble">
+                        
+                        <blockquote><p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p></blockquote>
+                    </div>
+                </div>
+                <div class="card-body">
+                <div class="text-center">
+                    <img class="card-img-top rounded-circle img-comment-user" src="<?php echo(get_template_directory_uri()) ?>/images/img_avatar3.jpg" alt="Card image cap">
+                </div>
+                <p class="text-center"><small class="text-muted">Usuário da Silva</small></p>
                 </div>
             </div>
-            <div class="card-body">
-            <div class="text-center">
-                <img class="card-img-top rounded-circle img-comment-user" src="<?php echo(get_template_directory_uri()) ?>/images/img_avatar3.jpg" alt="Card image cap">
-            </div>
-            <p class="text-center"><small class="text-muted">Usuário da Silva</small></p>
-            </div>
-        </div>
-        <div class="card border-0">
-            <div class="card border-0 mb-3 mx-auto" style="max-width: 18rem;">
-                <div class="speech-bubble">
-                    
-                    <blockquote><p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p></blockquote>
+            <div class="card border-0">
+                <div class="card border-0 mb-3 mx-auto" style="max-width: 18rem;">
+                    <div class="speech-bubble">
+                        
+                        <blockquote><p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p></blockquote>
+                    </div>
+                </div>
+                <div class="card-body">
+                <div class="text-center">
+                    <img class="card-img-top rounded-circle img-comment-user" src="<?php echo(get_template_directory_uri()) ?>/images/img_avatar3.jpg" alt="Card image cap">
+                </div>
+                <p class="text-center"><small class="text-muted">Usuário da Silva</small></p>
                 </div>
             </div>
-            <div class="card-body">
-            <div class="text-center">
-                <img class="card-img-top rounded-circle img-comment-user" src="<?php echo(get_template_directory_uri()) ?>/images/img_avatar3.jpg" alt="Card image cap">
-            </div>
-            <p class="text-center"><small class="text-muted">Usuário da Silva</small></p>
-            </div>
-        </div>
-        <div class="card border-0">
-            <div class="card border-0 mb-3 mx-auto" style="max-width: 18rem;">
-                <div class="speech-bubble">
-                    
-                    <blockquote><p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p></blockquote>
+            <div class="card border-0">
+                <div class="card border-0 mb-3 mx-auto" style="max-width: 18rem;">
+                    <div class="speech-bubble">
+                        
+                        <blockquote><p>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p></blockquote>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-            <div class="text-center">
-                <img class="card-img-top rounded-circle img-comment-user" src="<?php echo(get_template_directory_uri()) ?>/images/img_avatar3.jpg" alt="Card image cap">
-            </div>
-            <p class="text-center"><small class="text-muted">Usuário da Silva</small></p>
+                <div class="card-body">
+                <div class="text-center">
+                    <img class="card-img-top rounded-circle img-comment-user" src="<?php echo(get_template_directory_uri()) ?>/images/img_avatar3.jpg" alt="Card image cap">
+                </div>
+                <p class="text-center"><small class="text-muted">Usuário da Silva</small></p>
+                </div>
             </div>
         </div>
     </div>
