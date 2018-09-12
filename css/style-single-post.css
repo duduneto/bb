@@ -1,0 +1,22 @@
+.header-single-post{
+    margin-bottom: 10vh;
+    height: 60vh;
+    width: 100%;
+    /* background-image: url("images/header2.png"); */
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+    /* margin-left: 10vw; */
+    /* margin-top: 10vw; */
+    margin-bottom: 2em;
+}
+.title-single-post{
+    font-size: 3.5em;
+}
+.text-post > p{
+    font-size: 1.3em;
+
+}
